@@ -52,7 +52,8 @@ def eval_acc(y_pred, y):
     acc = accuracy_score(y, pred_label)
     return acc
 def eval_auc(y_hat, y):
-    auc = roc_auc_score(y, y_hat)
+    y_pred = [int(p[0]) for p in y_hat]
+    auc = roc_auc_score(y, y_pred)
     return auc
 
 def getValTest():
